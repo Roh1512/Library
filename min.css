@@ -66,14 +66,20 @@
     
     --formCol : black;
     --cardBG : rgb(29, 56, 42);
+    
 }
 
 body {
     width: 100%;
     height: 100%;
     text-align: center;
+    background-color: black;
     background-image: var(--bodyBG);
     color: var(--accent);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 header {
@@ -225,7 +231,7 @@ header #addBook:active {
 .bookContainer {
     padding: 1rem;
     display: grid;
-    gap: 1rem;
+    gap: 1.5rem;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr) );
 }
 .bookCard {
@@ -298,4 +304,15 @@ header #addBook:active {
 
 .view{
     display: flex;
+}
+
+@media (max-width: 500px) {
+    header {
+        padding: 1rem 0.5rem;
+    }
+    header #addBook {
+        font-size: 1.5rem;
+        padding: 1rem 0.4rem;
+        width: fit-content;
+    }
 }
