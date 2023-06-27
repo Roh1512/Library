@@ -65,8 +65,8 @@
             hsl(0deg 0% 0%) 100%);
     
     --formCol : black;
-    --cardBG : rgb(29, 56, 42);
-    
+    --cardBG : linear-gradient(90deg, #fcff9e 0%, #c67700 100%);
+    --cardBGHover : linear-gradient(100deg, #fcff9e 0%, #c67700 100%);
 }
 
 body {
@@ -107,13 +107,16 @@ header #addBook {
     box-shadow: 10px 10px 10px 3px rgba(0, 0, 0, 0.66);
     cursor: pointer;
     transition: all 0.4s;
+    border: 4px solid black;
 }
 header #addBook:hover {
     transform: scale(1.1);
+    outline: 1px dashed white;
 }
 header #addBook:active {
     background-color: black;
     transform: scale(1);
+    outline: 1px dashed white;
 }
 
 .addFormContainer {
@@ -154,24 +157,31 @@ header #addBook:active {
     font-size: 1.2rem;
     border: 2px solid black;
     border-radius: 0.5rem;
+    transition: all 0.4s;
+}
+.addForm form .text:focus {
+    transform: scale3d(1.05,1.1,1.2);
 }
 .addForm form .read {
     appearance: none;
-    border: 6px solid red;
+    border: 4px solid red;
     background-color: transparent;
 
     width: 2rem;
     height: 2rem;
-    margin-bottom: -5px;
+    margin-left: 0.5rem;
+    margin-bottom: -7px;
     cursor: pointer;
     transition: all 0.4s;
     border-radius: 20%;
 }
 .addForm form .read:hover {
     transform: scale3d(1.1,1.1,1.1);
+    outline: 1px dashed white;
 }
 .addForm form .read:active{
     transform: scale3d(.5,0.5,0.5);
+    outline: 1px dashed white;
 }
 .addForm form .read:checked {
     background-color: green;
@@ -197,10 +207,12 @@ header #addBook:active {
 }
 .addBook:hover {
     transform: scale3d(1.1,1.1,1.1);
+    outline: 1px dashed white;
 }
 .addBook:active {
     background-color: black;
     transform: scale3d(0.6,0.6,0.6);
+    outline: 1px dashed white;
 }
 
 .close {
@@ -220,6 +232,7 @@ header #addBook:active {
 }
 .close:hover {
     transform: scale3d(1.1,1.1,1.1);
+    outline: 1px dashed white;
 }
 .close:active {
     transform: scale3d(0.8,0.8,0.8);
@@ -235,7 +248,7 @@ header #addBook:active {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr) );
 }
 .bookCard {
-    background-image: var(--btnmainBG);
+    background: var(--cardBG);
     color: rgb(0, 0, 0);
     padding: 2rem;
     display: flex;
@@ -247,8 +260,13 @@ header #addBook:active {
     -webkit-box-shadow: 10px 10px 10px 3px rgba(99, 98, 98, 0.66);
     -moz-box-shadow: 10px 10px 10px 3px rgba(0, 0, 0, 0.66);
     box-shadow: 10px 10px 10px 3px rgba(0, 0, 0, 0.66);
-
+    transition: all 0.4s;
 }
+.bookCard:hover {
+    background:var(--cardBGHover);
+    transform: scale3d(1.1,1.1,1.1);
+}
+
 .bookTitle {
     border-bottom: 1px solid black;
 }
