@@ -156,25 +156,26 @@ header #addBook:active {
     border-radius: 0.5rem;
 }
 .addForm form .read {
-    border: 4px solid rgb(247, 235, 235);
-    background-color: transparent;
     appearance: none;
+    border: 6px solid red;
+    background-color: transparent;
+
     width: 2rem;
     height: 2rem;
+    margin-bottom: -5px;
     cursor: pointer;
-    display: grid;
-    place-content: center;
     transition: all 0.4s;
     border-radius: 20%;
 }
 .addForm form .read:hover {
-    transform: scale3d(1.2,1.2,1.2);
+    transform: scale3d(1.1,1.1,1.1);
 }
 .addForm form .read:active{
     transform: scale3d(.5,0.5,0.5);
 }
 .addForm form .read:checked {
-    background-image: var(--btnmainBG);
+    background-color: green;
+    border: none;
     clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
     transition: all 0.5s;
 }
@@ -183,7 +184,6 @@ header #addBook:active {
     padding: 0.7rem;
     font-weight: 600;
     outline: none;
-    border: none;
     background-image: var(--btnmainBG);
     border: 5px solid Black;
     color: var(--btnmainCol);
@@ -196,7 +196,7 @@ header #addBook:active {
     transition: all 0.4s;
 }
 .addBook:hover {
-    transform: scale(1.1);
+    transform: scale3d(1.1,1.1,1.1);
 }
 .addBook:active {
     background-color: black;
