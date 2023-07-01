@@ -1,15 +1,14 @@
 (function () {
     let myLibrary = [];
 
-    class Book {
-        constructor(title, author, pages,read){
+    function Book(title, author, pages,read){
             this.id = new Date().getTime();
             this.title = title;
             this.author = author;
             this.pages = pages;
             this.read = read;
-        }
     }
+    
     let bookContainer = document.getElementById('bookContainer');//Container element that store book cards
     let addBookForm = document.getElementById('addFormContainer');//Form to add Book
 

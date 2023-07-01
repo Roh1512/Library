@@ -6,28 +6,8 @@
 
 :root {
     font-size: 16px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    --bodyBG : linear-gradient(255deg,
-            hsl(0deg 89% 4%) 0%,
-            hsl(354deg 78% 5%) 5%,
-            hsl(346deg 70% 6%) 10%,
-            hsl(337deg 63% 7%) 16%,
-            hsl(330deg 56% 7%) 22%,
-            hsl(323deg 49% 8%) 30%,
-            hsl(315deg 43% 9%) 38%,
-            hsl(304deg 38% 9%) 50%,
-            hsl(289deg 37% 10%) 80%,
-            hsl(275deg 37% 12%) 94%,
-            hsl(252deg 35% 14%) 97%,
-            hsl(224deg 49% 14%) 98%,
-            hsl(207deg 89% 12%) 99%,
-            hsl(202deg 100% 12%) 100%,
-            hsl(198deg 100% 12%) 100%,
-            hsl(192deg 100% 11%) 100%,
-            hsl(185deg 100% 11%) 100%,
-            hsl(176deg 100% 10%) 100%,
-            hsl(167deg 93% 11%) 100%,
-            hsl(149deg 47% 15%) 100%);;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    --bodyBG : linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgb(14, 14, 14) 50%, rgba(26, 21, 14, 1) 100%);
     --accent : rgb(196, 188, 188);
     --btnmainBG: linear-gradient(150deg,
             hsl(0deg 0% 94%) 0%,
@@ -45,28 +25,24 @@
             hsl(25deg 100% 82%) 92%,
             hsl(47deg 81% 80%) 96%,
             hsl(101deg 89% 86%) 100%);
+    --btnAdd : linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(38, 253, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
     --btnmainCol : rgb(18, 16, 16);
 
     --formBG : linear-gradient(255deg,
             hsl(0deg 0% 0%) 0%,
-            hsl(264deg 100% 5%) 14%,
-            hsl(266deg 80% 5%) 24%,
-            hsl(266deg 62% 7%) 33%,
+            
             hsl(265deg 49% 8%) 41%,
             hsl(265deg 39% 9%) 49%,
             hsl(274deg 33% 11%) 57%,
             hsl(288deg 32% 13%) 64%,
             hsl(303deg 32% 14%) 70%,
             hsl(315deg 35% 17%) 76%,
-            hsl(318deg 40% 16%) 82%,
-            hsl(317deg 49% 13%) 87%,
-            hsl(316deg 64% 10%) 92%,
-            hsl(316deg 100% 7%) 96%,
+            
             hsl(0deg 0% 0%) 100%);
     
     --formCol : black;
-    --cardBG : linear-gradient(90deg, #fcff9e 0%, #c67700 100%);
-    --cardBGHover : linear-gradient(100deg, #fcff9e 0%, #c67700 100%);
+    --cardBGHover : linear-gradient(90deg, #fcff9e 0%, #CBE4DE 100%);
+    --cardBG : linear-gradient(100deg, #fcff9e 0%, #61847c 100%);
 }
 
 body {
@@ -80,6 +56,8 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
+    font-family: inherit;
+    
 }
 
 header {
@@ -92,31 +70,42 @@ header {
     padding: 1rem 1.5rem;
     border-bottom: 10px dotted var(--accent);
 }
+header h1 {
+    font-size: 3rem;
+    padding: 0;
+    margin: 0;
+    background: var(--btnmainBG);
+    background-clip: var(--btnmainBG);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 
 header #addBook {
-    padding: 1rem ;
-    font-size: 1.5rem;
-    font-weight: 700;
+    padding: 0.2rem ;
+    font-size: 2rem;
+    font-weight: 900;
     outline: none;
-    border: none;
-    background-image: var(--btnmainBG);
-    color: var(--btnmainCol);
-    border-radius: 0.5rem;
-    -webkit-box-shadow: 10px 10px 10px 3px rgba(99, 98, 98, 0.66);
-    -moz-box-shadow: 10px 10px 10px 3px rgba(0, 0, 0, 0.66);
-    box-shadow: 10px 10px 10px 3px rgba(0, 0, 0, 0.66);
+    border: 1px solid greenyellow;
+    background: var(--btnAdd);
     cursor: pointer;
     transition: all 0.4s;
-    border: 4px solid black;
+    background-clip: var(--btnAdd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 header #addBook:hover {
     transform: scale(1.1);
-    outline: 1px dashed white;
 }
 header #addBook:active {
     background-color: black;
     transform: scale(1);
-    outline: 1px dashed white;
+}
+
+.contentHead{
+    background: var(--btnmainBG);
+    background-clip: var(--btnmainBG);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .addFormContainer {
@@ -191,19 +180,20 @@ header #addBook:active {
 }
 
 .addBook {
-    padding: 0.7rem;
-    font-weight: 600;
+    padding: 0.5rem 1rem;
+    width: fit-content;
+    align-self: center;
+    font-weight: 900;
     outline: none;
-    background-image: var(--btnmainBG);
-    border: 5px solid Black;
-    color: var(--btnmainCol);
+    background: var(--btnAdd);
+    border: 2px solid greenyellow;
     border-radius: 0.4rem;
-    -webkit-box-shadow: 6px 6px 6px 3px rgba(0, 0, 0, 0.66);
-    -moz-box-shadow: 6px 5px 6px 3px rgba(0, 0, 0, 0.66);
-    box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.66);
     font-size: 2rem;
     cursor: pointer;
     transition: all 0.4s;
+    background-clip: var(--btnAdd);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
 }
 .addBook:hover {
     transform: scale3d(1.1,1.1,1.1);
@@ -264,7 +254,6 @@ header #addBook:active {
 }
 .bookCard:hover {
     background:var(--cardBGHover);
-    transform: scale3d(1.1,1.1,1.1);
 }
 
 .bookTitle {
@@ -330,9 +319,12 @@ header #addBook:active {
     header {
         padding: 1rem 0.5rem;
     }
+    header h1 {
+        font-size: 1.7rem;
+    }
     header #addBook {
-        font-size: 1.5rem;
-        padding: 1rem 0.4rem;
+        font-size: 1.4rem;
+        padding: 0.2rem 0.4rem;
         width: fit-content;
     }
 }
