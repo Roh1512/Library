@@ -1,34 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./min.css" />
     <title>Library</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1 class="logo">Library</h1>
-        <button type="button" class="addBook" id="addBook"><span style="color: green;">+</span>Add Book</button>
+      <h1 class="logo">Library</h1>
+      <button type="button" class="addBook" id="addBook">
+        <span style="color: green">+</span>Add Book
+      </button>
     </header>
     <h1 class="contentHead">List of Books</h1>
     <div class="addFormContainer" id="addFormContainer">
-        <div class="addForm">
-            <h2 class="heading">Add New Book</h2>
-            <form action="" id="newBook">
-                <input type="text" class="text" placeholder="Title" id="title" required>
-                <input type="text" class="text" placeholder="Author" id="author" required>
-                <input type="number" class="text" placeholder="Pages" id="pages" required>
-                <label for="read">Have you Read this book?
-                    <input type="checkbox" name="read" class="read" id="read" >
-                </label>
-                <button type="submit" class="addBook" id="add">ADD BOOK</button>
-                <button type="button" class="close" id="close">X</button>
-            </form>
-        </div>
+      <div class="addForm">
+        <h2 class="heading">Add New Book</h2>
+        <form action="" id="newBook">
+          <input
+            type="text"
+            class="text"
+            placeholder="Title"
+            id="title"
+            minlength="3"
+            required
+          />
+          <input
+            type="text"
+            class="text"
+            placeholder="Author"
+            id="author"
+            required
+            minlength="3"
+          />
+          <input
+            type="number"
+            class="text"
+            placeholder="Pages"
+            id="pages"
+            min="10"
+            required
+          />
+          <label for="read"
+            >Have you Read this book?
+            <input type="checkbox" name="read" class="read" id="read" />
+          </label>
+          <button type="submit" class="addBook" id="add">ADD BOOK</button>
+          <button type="button" class="close" id="close">X</button>
+        </form>
+      </div>
     </div>
     <div class="bookContainer" id="bookContainer">
-        <!-- <div class="bookCard">
+      <!-- <div class="bookCard">
             <h2 class="bookTitle" id="bookTitle">Book Title</h2>
             <h3 class="bookAuthor" id="bookAuthor">Name of Author</h3>
             <h4 class="bookPages" id="bookPages"><span class="pageNumber" id="pageNumber">400</span> Pages</h4>
@@ -36,8 +60,7 @@
             <button type="button" class="remove" id="remove">Remove</button>
         </div> -->
     </div>
-    
 
     <script src="./main2.js" defer></script>
-</body>
+  </body>
 </html>

@@ -1,330 +1,366 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
-    font-size: 16px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    --bodyBG : linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgb(14, 14, 14) 50%, rgba(26, 21, 14, 1) 100%);
-    --accent : rgb(196, 188, 188);
-    --btnmainBG: linear-gradient(150deg,
-            hsl(0deg 0% 94%) 0%,
-            hsl(27deg 15% 90%) 8%,
-            hsl(28deg 21% 85%) 16%,
-            hsl(28deg 24% 81%) 25%,
-            hsl(28deg 25% 77%) 34%,
-            hsl(24deg 31% 75%) 43%,
-            hsl(11deg 43% 77%) 52%,
-            hsl(353deg 51% 79%) 60%,
-            hsl(332deg 51% 79%) 68%,
-            hsl(294deg 40% 77%) 75%,
-            hsl(323deg 67% 81%) 81%,
-            hsl(357deg 100% 86%) 87%,
-            hsl(25deg 100% 82%) 92%,
-            hsl(47deg 81% 80%) 96%,
-            hsl(101deg 89% 86%) 100%);
-    --btnAdd : linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(38, 253, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
-    --btnmainCol : rgb(18, 16, 16);
+  font-size: 16px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  --bodyBG: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgb(14, 14, 14) 50%,
+    rgba(26, 21, 14, 1) 100%
+  );
+  --accent: rgb(196, 188, 188);
+  --btnmainBG: linear-gradient(
+    150deg,
+    hsl(0deg 0% 94%) 0%,
+    hsl(27deg 15% 90%) 8%,
+    hsl(28deg 21% 85%) 16%,
+    hsl(28deg 24% 81%) 25%,
+    hsl(28deg 25% 77%) 34%,
+    hsl(24deg 31% 75%) 43%,
+    hsl(11deg 43% 77%) 52%,
+    hsl(353deg 51% 79%) 60%,
+    hsl(332deg 51% 79%) 68%,
+    hsl(294deg 40% 77%) 75%,
+    hsl(323deg 67% 81%) 81%,
+    hsl(357deg 100% 86%) 87%,
+    hsl(25deg 100% 82%) 92%,
+    hsl(47deg 81% 80%) 96%,
+    hsl(101deg 89% 86%) 100%
+  );
+  --btnAdd: linear-gradient(
+    90deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(38, 253, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  --btnmainCol: rgb(18, 16, 16);
 
-    --formBG : linear-gradient(255deg,
-            hsl(0deg 0% 0%) 0%,
-            
-            hsl(265deg 49% 8%) 41%,
-            hsl(265deg 39% 9%) 49%,
-            hsl(274deg 33% 11%) 57%,
-            hsl(288deg 32% 13%) 64%,
-            hsl(303deg 32% 14%) 70%,
-            hsl(315deg 35% 17%) 76%,
-            
-            hsl(0deg 0% 0%) 100%);
-    
-    --formCol : black;
-    --cardBGHover : linear-gradient(90deg, #fcff9e 0%, #CBE4DE 100%);
-    --cardBG : linear-gradient(100deg, #fcff9e 0%, #61847c 100%);
+  --formBG: linear-gradient(
+    255deg,
+    hsl(0deg 0% 0%) 0%,
+
+    hsl(265deg 49% 8%) 41%,
+    hsl(265deg 39% 9%) 49%,
+    hsl(274deg 33% 11%) 57%,
+    hsl(288deg 32% 13%) 64%,
+    hsl(303deg 32% 14%) 70%,
+    hsl(315deg 35% 17%) 76%,
+
+    hsl(0deg 0% 0%) 100%
+  );
+
+  --formCol: black;
+  --cardBGHover: linear-gradient(90deg, #fcff9e 0%, #cbe4de 100%);
+  --cardBG: linear-gradient(100deg, #fcff9e 0%, #61847c 100%);
 }
 
 body {
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    background-color: black;
-    background-image: var(--bodyBG);
-    color: var(--accent);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    font-family: inherit;
-    
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background-color: black;
+  background-image: var(--bodyBG);
+  color: var(--accent);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: inherit;
 }
 
 header {
-    display: flex;
-    flex-wrap: wrap;
-    text-align: center;
-    align-items: center;
-    justify-content: space-between;
-    width: 100vw;
-    padding: 1rem 1.5rem;
-    border-bottom: 10px dotted var(--accent);
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  padding: 1rem 1.5rem;
+  border-bottom: 10px dotted var(--accent);
 }
 header h1 {
-    font-size: 3rem;
-    padding: 0;
-    margin: 0;
-    background: var(--btnmainBG);
-    background-clip: var(--btnmainBG);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  font-size: 3rem;
+  padding: 0;
+  margin: 0;
+  background: var(--btnmainBG);
+  background-clip: var(--btnmainBG);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 header #addBook {
-    padding: 0.2rem ;
-    font-size: 2rem;
-    font-weight: 900;
-    outline: none;
-    border: 1px solid greenyellow;
-    background: var(--btnAdd);
-    cursor: pointer;
-    transition: all 0.4s;
-    background-clip: var(--btnAdd);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  padding: 0.2rem;
+  font-size: 2rem;
+  font-weight: 900;
+  outline: none;
+  border: 1px solid greenyellow;
+  background: var(--btnAdd);
+  cursor: pointer;
+  transition: all 0.4s;
+  background-clip: var(--btnAdd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 header #addBook:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 header #addBook:active {
-    background-color: black;
-    transform: scale(1);
+  background-color: black;
+  transform: scale(1);
 }
 
-.contentHead{
-    background: var(--btnmainBG);
-    background-clip: var(--btnmainBG);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.contentHead {
+  background: var(--btnmainBG);
+  background-clip: var(--btnmainBG);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .addFormContainer {
-    display: none;/*flex*/
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    backdrop-filter: blur(5px);
+  display: none; /*flex*/
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  backdrop-filter: blur(5px);
 }
 
 .addForm {
-    background-image: var(--formBG);
-    color: var(--formCol);
-    min-width: 200px;
-    max-width: fit-content;
-    padding: 1rem;
-    font-size: 1.6rem;
-    height: fit-content;
-    border-radius: 0.6rem;
-    text-align: center;
-    color: var(--accent);
+  background-image: var(--formBG);
+  color: var(--formCol);
+  min-width: 200px;
+  max-width: fit-content;
+  padding: 1rem;
+  font-size: 1.6rem;
+  height: fit-content;
+  border-radius: 0.6rem;
+  text-align: center;
+  color: var(--accent);
 }
 
 .addForm form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.4rem;
-    margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  margin-top: 1rem;
 }
 
 .addForm form .text {
-    padding: 0.6rem 0.5rem;
-    font-size: 1.2rem;
-    border: 2px solid black;
-    border-radius: 0.5rem;
-    transition: all 0.4s;
+  padding: 0.6rem 0.5rem;
+  font-size: 1.2rem;
+  border: 2px solid black;
+  border-radius: 0.5rem;
+  transition: all 0.4s;
 }
 .addForm form .text:focus {
-    transform: scale3d(1.05,1.1,1.2);
+  transform: scale3d(1.05, 1.1, 1.2);
 }
-.addForm form .read {
-    appearance: none;
-    border: 4px solid red;
-    background-color: transparent;
+.addForm form .text:valid {
+  outline: 2px solid green;
+}
+.addForm form .text:invalid {
+  outline: 2px solid red;
+}
 
-    width: 2rem;
-    height: 2rem;
-    margin-left: 0.5rem;
-    margin-bottom: -7px;
-    cursor: pointer;
-    transition: all 0.4s;
-    border-radius: 20%;
+.addForm form .read {
+  appearance: none;
+  border: 4px solid red;
+  background-color: transparent;
+
+  width: 2rem;
+  height: 2rem;
+  margin-left: 0.5rem;
+  margin-bottom: -7px;
+  cursor: pointer;
+  transition: all 0.4s;
+  border-radius: 20%;
 }
 .addForm form .read:hover {
-    transform: scale3d(1.1,1.1,1.1);
-    outline: 1px dashed white;
+  transform: scale3d(1.1, 1.1, 1.1);
+  outline: 1px dashed white;
 }
-.addForm form .read:active{
-    transform: scale3d(.5,0.5,0.5);
-    outline: 1px dashed white;
+.addForm form .read:active {
+  transform: scale3d(0.5, 0.5, 0.5);
+  outline: 1px dashed white;
 }
 .addForm form .read:checked {
-    background-color: green;
-    border: none;
-    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
-    transition: all 0.5s;
+  background-color: green;
+  border: none;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transition: all 0.5s;
 }
 
 .addBook {
-    padding: 0.5rem 1rem;
-    width: fit-content;
-    align-self: center;
-    font-weight: 900;
-    outline: none;
-    background: var(--btnAdd);
-    border: 2px solid greenyellow;
-    border-radius: 0.4rem;
-    font-size: 2rem;
-    cursor: pointer;
-    transition: all 0.4s;
-    background-clip: var(--btnAdd);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+  padding: 0.5rem 1rem;
+  width: fit-content;
+  align-self: center;
+  font-weight: 900;
+  outline: none;
+  background: var(--btnAdd);
+  border: 2px solid greenyellow;
+  border-radius: 0.4rem;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.4s;
+  background-clip: var(--btnAdd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .addBook:hover {
-    transform: scale3d(1.1,1.1,1.1);
-    outline: 1px dashed white;
+  transform: scale3d(1.1, 1.1, 1.1);
+  outline: 1px dashed white;
 }
 .addBook:active {
-    background-color: black;
-    transform: scale3d(0.6,0.6,0.6);
-    outline: 1px dashed white;
+  background-color: black;
+  transform: scale3d(0.6, 0.6, 0.6);
+  outline: 1px dashed white;
 }
 
 .close {
-    font-weight: 400;
-    font-size: 50px;
-    width: 70px;
-    height: 70px;
-    margin: 0 auto;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    transition: all 0.4s;
-    border: 5px solid red;
-    background-color: transparent;
-    border-radius: 50%;
-    color: rgb(241, 239, 239);
+  font-weight: 400;
+  font-size: 50px;
+  width: 70px;
+  height: 70px;
+  margin: 0 auto;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.4s;
+  border: 5px solid red;
+  background-color: transparent;
+  border-radius: 50%;
+  color: rgb(241, 239, 239);
 }
 .close:hover {
-    transform: scale3d(1.1,1.1,1.1);
-    outline: 1px dashed white;
+  transform: scale3d(1.1, 1.1, 1.1);
+  outline: 1px dashed white;
 }
 .close:active {
-    transform: scale3d(0.8,0.8,0.8);
-    border: 5px solid greenyellow;
-    color: greenyellow;
+  transform: scale3d(0.8, 0.8, 0.8);
+  border: 5px solid greenyellow;
+  color: greenyellow;
 }
-
 
 .bookContainer {
-    padding: 1rem;
-    display: grid;
-    gap: 1.5rem;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr) );
+  padding: 1rem;
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
 .bookCard {
-    background: var(--cardBG);
-    color: rgb(0, 0, 0);
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
-    border-radius: 1rem;
-    font-size: 1.4rem;
-    -webkit-box-shadow: 10px 10px 10px 3px rgba(99, 98, 98, 0.66);
-    -moz-box-shadow: 10px 10px 10px 3px rgba(0, 0, 0, 0.66);
-    box-shadow: 10px 10px 10px 3px rgba(0, 0, 0, 0.66);
-    transition: all 0.4s;
+  background: var(--cardBG);
+  color: rgb(0, 0, 0);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+  border-radius: 1rem;
+  font-size: 1.4rem;
+  -webkit-box-shadow: 10px 10px 10px 3px rgba(99, 98, 98, 0.66);
+  -moz-box-shadow: 10px 10px 10px 3px rgba(0, 0, 0, 0.66);
+  box-shadow: 10px 10px 10px 3px rgba(0, 0, 0, 0.66);
 }
 .bookCard:hover {
-    background:var(--cardBGHover);
+  background: var(--cardBGHover);
+}
+.bookCardAnimation {
+  opacity: 0;
+  height: 0;
+  animation-name: bookCardDisplay;
+  animation-duration: 400ms;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+}
+
+@keyframes bookCardDisplay {
+  0% {
+    opacity: 0;
+    height: 0;
+  }
+  100% {
+    opacity: 1;
+    height: auto;
+  }
 }
 
 .bookTitle {
-    border-bottom: 1px solid black;
+  border-bottom: 1px solid black;
 }
 .readStatus {
-    cursor: pointer;
-    padding: 0.5rem;
-    font-size: 1.3rem;
-    width: fit-content;
-    margin: auto;
-    font-weight: 600;
-    background-color: rgb(15, 15, 14);
-    border: none;
-    outline: none;
-    border-radius: 0.4rem;
-    transition: all 0.4s;
+  cursor: pointer;
+  padding: 0.5rem;
+  font-size: 1.3rem;
+  width: fit-content;
+  margin: auto;
+  font-weight: 600;
+  background-color: rgb(15, 15, 14);
+  border: none;
+  outline: none;
+  border-radius: 0.4rem;
+  transition: all 0.4s;
 }
 .readStatus:hover {
-    transform: scale3d(1.2,1.2,1.2);
+  transform: scale3d(1.2, 1.2, 1.2);
 }
 .readStatus:active {
-    transform: scale3d(0.8,0.8,0.8);
-    background-color: black;
+  transform: scale3d(0.8, 0.8, 0.8);
+  background-color: black;
 }
 
 .read {
-    color: rgb(9, 174, 9);
+  color: rgb(9, 174, 9);
 }
-.notRead{
-    color: red;
+.notRead {
+  color: red;
 }
-
 
 .remove {
-    cursor: pointer;
-    font-size: 1.3rem;
-    font-weight: 600;
-    width: fit-content;
-    margin: auto;
-    color: antiquewhite;
-    border: none;
-    outline: none;
-    border-radius: 0.4rem;
-    padding: 0.5rem;
-    background-color: rgb(171, 20, 20);
-    transition: all 0.4s;
+  cursor: pointer;
+  font-size: 1.3rem;
+  font-weight: 600;
+  width: fit-content;
+  margin: auto;
+  color: antiquewhite;
+  border: none;
+  outline: none;
+  border-radius: 0.4rem;
+  padding: 0.5rem;
+  background-color: rgb(171, 20, 20);
+  transition: all 0.4s;
 }
 .remove:hover {
-    transform: scale3d(1.2, 1.2, 1.2);
+  transform: scale3d(1.2, 1.2, 1.2);
 }
-.remove:active{
-    transform: scale3d(0.8, 0.8, 0.8);
-    background-color: black;
-    color: azure;
+.remove:active {
+  transform: scale3d(0.8, 0.8, 0.8);
+  background-color: black;
+  color: azure;
 }
 
-.view{
-    display: flex;
+.view {
+  display: flex;
 }
 
 @media (max-width: 500px) {
-    header {
-        padding: 1rem 0.5rem;
-    }
-    header h1 {
-        font-size: 1.7rem;
-    }
-    header #addBook {
-        font-size: 1.4rem;
-        padding: 0.2rem 0.4rem;
-        width: fit-content;
-    }
+  header {
+    padding: 1rem 0.5rem;
+  }
+  header h1 {
+    font-size: 1.7rem;
+  }
+  header #addBook {
+    font-size: 1.4rem;
+    padding: 0.2rem 0.4rem;
+    width: fit-content;
+  }
 }
